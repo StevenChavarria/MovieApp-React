@@ -9,17 +9,21 @@ interface MovieCardProps {
     poster_path: string,
     release_date: string,
     first_air_date: string,
-    name: string 
+    name: string
 }
 
-export const MovieCard:React.FC<MovieCardProps> = ({ title, vote_average, poster_path, release_date, name, first_air_date}) => {
+export const MovieCard: React.FC<MovieCardProps> = ({ title, vote_average, poster_path, release_date, name, first_air_date }) => {
     return (
         <div className="movie">
             <img src={IMG_API + poster_path} alt={title} />
             <div className="movie-info">
                 <h3>{title ?? name}</h3>
-                <span>{vote_average}</span>
-                <span>{release_date ?? first_air_date}</span>
+                <span><strong>Release date: </strong>{release_date ?? first_air_date} </span>
+                <span><strong>Score: </strong>{vote_average}</span>
+                <div className="wrapper">
+                    <button>+ Wishlist</button>
+                    <button>+ Watchlist</button>
+                </div>
             </div>
         </div>
     )
