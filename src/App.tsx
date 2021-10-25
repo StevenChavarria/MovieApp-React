@@ -8,28 +8,29 @@ import "./App.css";
 import { Home } from "./components/Home";
 import { Nav } from "./components/Nav";
 import "./lib/font-awesome/css/all.min.css";
-
-//import { GlobalProvider } from "./context/GlobalState";
+import { GlobalProvider } from "./context/GlobalState";
+import { Profile } from "./components/Profile";
+import { MovieDetail } from "./components/MovieDetail";
+import { MovieCard } from "./components/MovieCard";
 
 function App() {
   return (
-   // <GlobalProvider>
+    <GlobalProvider>
       <Router>
         <Nav />
-
         <Switch>
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/add">
-         {/* //<Add /> */}
+          <Route path="/profile">
+            <Profile />
           </Route>
-          <Route path="/watched">
-            {/* <Watched /> */}
+          <Route exact path="/movie/:id">
+            <MovieDetail />
           </Route>
         </Switch>
       </Router>
-  //  </GlobalProvider>
+    </GlobalProvider>
   );
 }
 

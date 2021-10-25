@@ -1,4 +1,8 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
+import { Link, Route } from "react-router-dom";
+import { MovieDetail } from "./MovieDetail";
+
 
 const IMG_API = "https://image.tmdb.org/t/p/w1280";
 
@@ -12,17 +16,28 @@ interface MovieCardProps {
     name: string
 }
 
-export const MovieCard: React.FC<MovieCardProps> = ({ title, vote_average, poster_path, release_date, name, first_air_date }) => {
+export const MovieCard: React.FC<MovieCardProps> = (props: MovieCardProps) => {
+    const { addMovieToWatchlist, addMovieToWatched, watchlist, watched, showmovie} = useContext(GlobalContext);
+
+    let storedMovie = watchlist.find((o: MovieCardProps) => o.id === props.id);
+    let storedMovieWatched = watched.find((o: MovieCardProps) => o.id === props.id);
+    const watchlistDisabled = storedMovie ? true : false;
+    const watchedDisabled = storedMovieWatched ? true : false;
+
     return (
         <div className="movie">
-            <img src={IMG_API + poster_path} alt={title} />
+            <Link to={`/movie/${props.id}`} className="link" onClick={() => showmovie(props)}>
+                <img src={IMG_API + props.poster_path} alt={props.title} />
+            </Link>
             <div className="movie-info">
-                <h3>{title ?? name}</h3>
-                <span><strong>Release date: </strong>{release_date ?? first_air_date} </span>
-                <span><strong>Score: </strong>{vote_average}</span>
+                <Link to={`/movie/${props.id}`} className="link" onClick={() => showmovie(props)}>
+                    <h3>{props.title ?? props.name}</h3>
+                </Link>
+                <span><strong>Release date: </strong>{props.release_date ?? props.first_air_date} </span>
+                <span><strong>Score: </strong>{props.vote_average}</span>
                 <div className="wrapper">
-                    <button>+ Wishlist</button>
-                    <button>+ Watchlist</button>
+                    <button onClick={() => addMovieToWatchlist(props)} disabled={watchlistDisabled}>+ Wishlist</button>
+                    <button onClick={() => addMovieToWatched(props)} disabled={watchedDisabled}>+ Watched</button>
                 </div>
             </div>
         </div>

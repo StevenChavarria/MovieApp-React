@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { MovieCard } from './MovieCard'
 
-interface Movies {
+export interface Movies {
     id: number,
     title: string,
     vote_average: number,
     poster_path: string,
     release_date: string,
     first_air_date: string,
-    name: string
+    name: string,
+    addMovieToWatchlist?: any,
 }
 
 const UPCOMING_MOVIES_API = "https://api.themoviedb.org/3/movie/upcoming?api_key=d38ddd23464c5200b506ef110d6061b2&language=en-US&page=1"
