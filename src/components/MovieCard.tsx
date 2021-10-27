@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
-import { Link, Route } from "react-router-dom";
-import { MovieDetail } from "./MovieDetail";
+import { Link } from "react-router-dom";
 
 
 const IMG_API = "https://image.tmdb.org/t/p/w1280";
+
 
 interface MovieCardProps {
     id: number,
@@ -13,7 +13,8 @@ interface MovieCardProps {
     poster_path: string,
     release_date: string,
     first_air_date: string,
-    name: string
+    name: string,
+    overview: string
 }
 
 export const MovieCard: React.FC<MovieCardProps> = (props: MovieCardProps) => {

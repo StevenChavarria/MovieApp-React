@@ -1,9 +1,7 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
 import { Movies } from './Home';
 import { MovieCard } from './MovieCard';
-
-const IMG_API = "https://image.tmdb.org/t/p/w1280";
 
 export const Profile = () => {
     const {watchlist, watched} = useContext(GlobalContext);
