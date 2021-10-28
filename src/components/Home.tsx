@@ -9,7 +9,6 @@ export interface Movies {
     release_date: string,
     first_air_date: string,
     name: string,
-    addMovieToWatchlist?: any,
     overview: string
 }
 

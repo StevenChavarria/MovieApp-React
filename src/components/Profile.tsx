@@ -4,12 +4,12 @@ import { Movies } from './Home';
 import { MovieCard } from './MovieCard';
 
 export const Profile = () => {
-    const {watchlist, watched} = useContext(GlobalContext);
+    const {wishlist, watched} = useContext(GlobalContext);
     return (
         <div>
             <h1>Wishlist</h1>
             <div className="movie-container">
-                {watchlist.map((movie: Movies) => (
+                {wishlist.map((movie: Movies) => (
                     <MovieCard key={movie.id} {...movie} />))}
             </div>
             <h1>Watched movies and shows</h1>

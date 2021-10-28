@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState';
 import "../styles/MovieDetail.css";
 
@@ -6,8 +6,8 @@ const IMG_API = "https://image.tmdb.org/t/p/w1280";
 
 export const MovieDetail = () => {
     const { movie } = useContext(GlobalContext);
-    const movies = movie[0];
-    const moviepath = `${IMG_API + movies?.poster_path}`;
+    const { title, name, release_date, vote_average, overview, poster_path} = movie[0];
+    const moviepath = `${IMG_API + poster_path}`;
 
     return (
         <div>
@@ -15,19 +15,19 @@ export const MovieDetail = () => {
                 <div className="movie_card">
                     <div className="info_section">
                         <div className="movie_header">
-                            <img className="locandina" src={moviepath} alt={movies?.title ?? movies.name}/>
-                            <h1>{movies?.title ?? movies?.name}</h1>
+                            <img className="movie_poster" src={moviepath} alt={title ?? name}/>
+                            <h1>{title ?? name}</h1>
                         </div>
                         <div className="movie_desc">
-                            <h4><strong>Release Date: </strong>{movies?.release_date}</h4>
-                            <h4><strong>Score: </strong>{movies?.vote_average}</h4>
+                            <h4><strong>Release Date: </strong>{release_date}</h4>
+                            <h4><strong>Score: </strong>{vote_average}</h4>
                             <h3>Overview</h3>
-                            <p className="text"> {movies?.overview} </p>
+                            <p className="text"> {overview} </p>
                         </div>
                     </div>
                     <div className="blur_back" style={{ backgroundImage: `url(${moviepath})` }}></div>
                 </div>
-            : <h1 className="noAvalaible">Movie not available</h1>}
+            : <h1 className="notAvalaible">Movie not available</h1>}
         </div>
     )
 }

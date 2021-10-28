@@ -1,21 +1,20 @@
 import { Movies } from "../components/Home";
 
 export default (state: any, action: any) => {
-
   switch (action.type) {
-    case "ADD_MOVIE_TO_WATCHLIST":
+    case "ADD_MOVIE_TO_WISHLIST":
       return {
         ...state,
-        watched: state.watchlist.filter(
+        watched: state.watched.filter(
           (movie: Movies) => movie.id !== action.payload.id
         ),
-        watchlist: [action.payload, ...state.watchlist],
+        wishlist: [action.payload, ...state.wishlist],
       }
 
     case "ADD_MOVIE_TO_WATCHED":
       return {
         ...state,
-        watchlist: state.watchlist.filter(
+        wishlist: state.wishlist.filter(
           (movie: Movies) => movie.id !== action.payload.id
         ),
         watched: [action.payload, ...state.watched],

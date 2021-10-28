@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom';
 
 export const Nav = () => {
@@ -9,7 +8,6 @@ export const Nav = () => {
                     <div className="brand">
                         <Link to="/">MovieApp</Link>
                     </div>
-
                     <ul className="nav-links">
                         <li>
                             <Link to="/">Home</Link>
