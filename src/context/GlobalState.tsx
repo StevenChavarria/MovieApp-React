@@ -19,7 +19,6 @@ const initialState = {
   movie
 }
 
-
 export const GlobalContext = createContext(initialState);
 
 

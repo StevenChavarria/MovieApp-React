@@ -1,12 +1,12 @@
 import { Movies } from "../components/Home";
 
-export default (state: any, action: any) => {
+const reducer = (state: any, action: any) => {
   switch (action.type) {
     case "ADD_MOVIE_TO_WISHLIST":
       return {
         ...state,
         watched: state.watched.filter(
-          (movie: Movies) => movie.id !== action.payload.id
+         (movie: Movies) => movie.id !== action.payload.id
         ),
         wishlist: [action.payload, ...state.wishlist],
       }
@@ -28,3 +28,5 @@ export default (state: any, action: any) => {
       return state;
   }
 };
+
+export default reducer

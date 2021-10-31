@@ -33,11 +33,12 @@
 	 color: black;
 	 font-weight: 400;
 }
+
  .movie_card .info_section .movie_header h4 {
 	 color: #555;
 	 font-weight: 400;
 }
- 
+
  .movie_card .info_section .movie_header .movie_poster {
 	 position: relative;
 	 float: left;
@@ -50,7 +51,10 @@
 	 height: 50%;
 }
  .movie_card .info_section .movie_desc .text {
-	 color: #545454;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 6;
+	-webkit-box-orient: vertical;
 }
 
  .movie_card .blur_back {
@@ -67,6 +71,11 @@
     text-align: center;
     margin: 15%;
 }
+
+.go2062499365{
+	color: rgb(141, 141, 141) !important;
+}
+
  @media screen and (min-width: 768px) {
 	 .movie_header {
 		 width: 65%;
