@@ -7,14 +7,14 @@ export const Profile = () => {
     const { wishlist, watched } = useContext(GlobalContext);
     return (
         <div>
-            <h1>Wishlist</h1>
+            <h1 className="profile-title">Wishlist</h1>
                 {wishlist.length > 0 ? (
                     <div className="movie-container">
                         {wishlist.map((movie: Movies) => (
                             <MovieCard key={movie.id} {...movie} />))}
                     </div>
                 ) : (<h2 className="no-movies">No movies in your wishlist, add some!</h2>)}
-            <h1>Watched movies and shows</h1>
+            <h1 className="profile-title">Watched movies and shows</h1>
             {watched.length > 0 ?
                 <div className="movie-container">
                     {watched.map((watch: Movies) => (

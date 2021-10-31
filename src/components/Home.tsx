@@ -40,17 +40,17 @@ export const Home = () => {
 
     return (
         <div>
-            <h1>Popular Movies</h1>
+            <h1 className="home-title">Popular Movies</h1>
             <div className="movie-container">
                 {popularData.slice(0, 5).map((data) => (
                     <MovieCard key={data.id} {...data} />))}
             </div>
-            <h1>Top-Rated TV Shows</h1>
+            <h1 className="home-title">Top-Rated TV Shows</h1>
             <div className="movie-container">
                 {topRatedShows.slice(0, 5).map((show) => (
                     <MovieCard key={show.id} {...show} />))}
             </div>
-            <h1>Upcoming Movies</h1>
+            <h1 className="home-title">Upcoming Movies</h1>
             <div className="movie-container">
                 {upcomingMovies.slice(0, 5).map((movie) => (
                     <MovieCard key={movie.id} {...movie} />))}

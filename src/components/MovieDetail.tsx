@@ -14,7 +14,7 @@ export const MovieDetail = () => {
     const moviepath = `${IMG_API + movies?.poster_path}`;
     const [guest, setGuest] = useState(guestid);
     const [rating, setRating] = useState(0);
-    const RATE_POST = `https://api.themoviedb.org/3/movie/${movies.id}/rating?api_key=d38ddd23464c5200b506ef110d6061b2&guest_session_id=${guest?.guest_session_id}`
+    const RATE_POST = `https://api.themoviedb.org/3/movie/${movies?.id}/rating?api_key=d38ddd23464c5200b506ef110d6061b2&guest_session_id=${guest?.guest_session_id}`
 
     const getGuestSession = async () => {
         const { data } = await axios.get(GUEST_SESSION);
@@ -60,7 +60,7 @@ export const MovieDetail = () => {
                     </div>
                     <div className="blur_back" style={{ backgroundImage: `url(${moviepath})` }}></div>
                 </div>
-                : <h1 className="notAvalaible">Movie not available</h1>}
+                : <h1 className="no-movies">Movie not available</h1>}
         </div>
     )
 }

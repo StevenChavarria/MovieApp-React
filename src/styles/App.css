@@ -75,7 +75,16 @@ header {
   display: flex;
   flex-wrap: wrap;
 }
+.home-title{
+  font-weight: 700;
+  font-size: 40px;
+  text-align: center;
+}
 
+.profile-title {
+  font-weight: 700;
+  font-size: 35px;
+}
 .movie {
   margin: 1rem;
   width: 260px;
@@ -147,6 +156,6 @@ header {
 
 .no-movies {
   color: #c4c4c4;
-  font-size: 3rem;
+  font-size: 48px;
   text-align: center;
 }
