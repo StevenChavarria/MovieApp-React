@@ -3,7 +3,6 @@ import { GlobalContext } from "../context/GlobalState";
 import { Link } from "react-router-dom";
 import { Movies } from "./Home";
 
-
 const IMG_API = "https://image.tmdb.org/t/p/w1280";
 
 
@@ -28,8 +27,8 @@ export const MovieCard: React.FC<Movies> = (movieCardProps: Movies) => {
                 <span><strong>Release date: </strong>{movieCardProps.release_date ?? movieCardProps.first_air_date} </span>
                 <span><strong>Score: </strong>{movieCardProps.vote_average}</span>
                 <div className="wrapper">
-                    <button onClick={() => addMovieToWishlist(movieCardProps)} disabled={wishlistDisabled}>+ Wishlist</button>
-                    <button onClick={() => addMovieToWatched(movieCardProps)} disabled={watchedDisabled}>+ Watched</button>
+                    <button onClick={() => addMovieToWishlist(movieCardProps)} disabled={wishlistDisabled}><img className="img_icon" src="/assets/wishlisticon.png" alt="wishlist icon"/> Wishlist</button>
+                    <button onClick={() => addMovieToWatched(movieCardProps)} disabled={watchedDisabled}><img className="img_icon" src="/assets/watched.png" alt="Watched icon"/> Watched</button>
                 </div>
             </div>
         </div>

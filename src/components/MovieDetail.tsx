@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useContext, useEffect, useState } from 'react'
-//import { useParams } from 'react-router';
 import StarsRating from 'react-star-rate';
 import { GlobalContext } from '../context/GlobalState';
 import "../styles/MovieDetail.css";
@@ -15,7 +14,6 @@ export const MovieDetail = () => {
     const moviepath = `${IMG_API + movies?.poster_path}`;
     const [guest, setGuest] = useState(guestid);
     const [rating, setRating] = useState(0);
-   // const { id } = useParams<{ id: string }>();
     const RATE_POST = `https://api.themoviedb.org/3/movie/${movies.id}/rating?api_key=d38ddd23464c5200b506ef110d6061b2&guest_session_id=${guest?.guest_session_id}`
 
     const getGuestSession = async () => {

@@ -116,14 +116,14 @@ header {
 }
 
 .wrapper button{
-  margin-right: 10px;
+  margin-right: 8px;
   background-color: #4CAF50; 
   border: none;
   color: white;
-  padding: 10px 15px;
+  padding: 8px 13px;
   text-align: center;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   cursor: pointer;
   -webkit-transition-duration: 0.4s; 
   transition-duration: 0.4s;
@@ -137,4 +137,16 @@ header {
 .link {
   text-decoration: none;
   color: black;
+}
+
+.img_icon{
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: cover !important;
+}
+
+.no-movies {
+  color: #c4c4c4;
+  font-size: 3rem;
+  text-align: center;
 }
